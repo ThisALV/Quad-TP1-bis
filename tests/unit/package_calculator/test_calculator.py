@@ -27,3 +27,16 @@ def test_calculator_division():
 
     with pytest.raises(ArithmeticError):
         calculator.division(10, 0)
+
+
+def test_calculator_calcule():
+    with pytest.raises(ValueError):
+        calculator.calcule("", 1, 2)
+
+    with pytest.raises(ArithmeticError):
+        calculator.calcule("/", 1, 0)
+
+    assert calculator.calcule("+", 1, 2) == 3
+    assert calculator.calcule("-", 1, 2) == -1
+    assert calculator.calcule("*", 2, 0) == 0
+    assert calculator.calcule("/", 1, 2) == 0.5
