@@ -29,6 +29,16 @@ def test_calculator_division():
         calculator.division(10, 0)
 
 
+def test_calculator_exposant():
+    with pytest.raises(ValueError):
+        calculator.exposant(1, -1)
+
+    assert calculator.exposant(2, 0) == 1
+    assert calculator.exposant(2, 1) == 2
+    assert calculator.exposant(2, 2) == 4
+    assert calculator.exposant(2, 3) == 8
+
+
 def test_calculator_calcule():
     with pytest.raises(ValueError):
         calculator.calcule("", 1, 2)
@@ -36,7 +46,11 @@ def test_calculator_calcule():
     with pytest.raises(ArithmeticError):
         calculator.calcule("/", 1, 0)
 
+    with pytest.raises(ValueError):
+        calculator.calcule("**", 1, -1)
+
     assert calculator.calcule("+", 1, 2) == 3
     assert calculator.calcule("-", 1, 2) == -1
     assert calculator.calcule("*", 2, 0) == 0
     assert calculator.calcule("/", 1, 2) == 0.5
+    assert calculator.calcule("**", 4, 2) == 16
