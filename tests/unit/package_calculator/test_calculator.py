@@ -1,4 +1,5 @@
 from package_calculator import calculator
+import pytest
 
 
 def test_calculator_somme():
@@ -23,3 +24,6 @@ def test_calculator_division():
     assert calculator.division(5, 2) == 2.5
     assert calculator.division(30, -3) == -10
     assert calculator.division(-10, 4) == -2.5
+
+    with pytest.raises(ArithmeticError):
+        calculator.division(10, 0)
