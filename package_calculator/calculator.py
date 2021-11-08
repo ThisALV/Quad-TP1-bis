@@ -25,7 +25,7 @@ def exposant(a, n):
     if n % 2 == 0:
         return exposant(a * a, n / 2)
 
-    return a * exposant(a, (n - 1) / 2)
+    return a * exposant(a * a, (n - 1) / 2)
 
 
 operations = {
