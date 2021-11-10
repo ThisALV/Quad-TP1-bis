@@ -41,4 +41,13 @@ def calcule(operation, a, b):
     if operation not in operations:
         raise ValueError(f"Opération {operation} inconnue")
 
-    return operations[operation](a, b)
+    resultat = operations[operation](a, b)
+
+    with open("logs.txt", "a") as fsortie:
+        fsortie.write(f"{a} {operation} {b} = {resultat}")
+
+    return resultat
+
+
+def dis_bonjour():
+    return "Bonjour"
