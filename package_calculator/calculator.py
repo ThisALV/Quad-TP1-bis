@@ -1,3 +1,6 @@
+import datetime
+
+
 def somme(a, b):
     return a + b
 
@@ -44,7 +47,8 @@ def calcule(operation, a, b):
     resultat = operations[operation](a, b)
 
     with open("logs.txt", "a") as fsortie:
-        print(f"{a} {operation} {b} = {resultat}", file=fsortie)
+        instant = datetime.datetime.now().strftime("%d/%m/%Y %H/%M/%S")
+        print(f"[{instant}] {a} {operation} {b} = {resultat}", file=fsortie)
 
     return resultat
 

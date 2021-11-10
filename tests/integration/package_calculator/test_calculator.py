@@ -16,5 +16,7 @@ def test_calculator_calcule():
         logs = fentree.readlines()
 
     assert len(logs) == 2
-    assert logs[0] == "1 + 2 = 3\n"
-    assert logs[1] == "2 ** 3 = 8\n"
+    assert logs[0].startswith("[")
+    assert logs[0].endswith("] 1 + 2 = 3\n")
+    assert logs[1].startswith("[")
+    assert logs[1].endswith("] 2 ** 3 = 8\n")
