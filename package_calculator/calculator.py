@@ -44,7 +44,7 @@ def calcule(operation, a, b):
     resultat = operations[operation](a, b)
 
     with open("logs.txt", "a") as fsortie:
-        fsortie.write(f"{a} {operation} {b} = {resultat}")
+        print(f"{a} {operation} {b} = {resultat}", file=fsortie)
 
     return resultat
 
