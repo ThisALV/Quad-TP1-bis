@@ -31,16 +31,15 @@ def exposant(a, n):
     return a * exposant(a * a, (n - 1) / 2)
 
 
-operations = {
-    "+": somme,
-    "-": soustraction,
-    "*": multiplication,
-    "/": division,
-    "**": exposant
-}
-
-
 def calcule(operation, a, b):
+    operations = {
+        "+": somme,
+        "-": soustraction,
+        "*": multiplication,
+        "/": division,
+        "**": exposant
+    }
+
     if operation not in operations:
         raise ValueError(f"Opération {operation} inconnue")
 
