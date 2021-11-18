@@ -25,3 +25,4 @@ def step_impl(context, url):
 @behave.then("Elle s'affiche")
 def step_impl(context):
     assert context.driver.title == context.titre_attendu
+    context.driver.quit()
