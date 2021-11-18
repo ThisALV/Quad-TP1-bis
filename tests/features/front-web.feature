@@ -2,7 +2,11 @@
 Fonctionnalité: Front-end Web
   Teste l'interface web de l'application calculator
 
-  Scénario:
+  Plan du Scénario:
     Étant donné Un navigateur ouvert
-    Quand On charge une page web
+    Quand On charge une page web <url>
     Alors Elle s'affiche
+    Exemples:
+      | url                               |
+      | "https://www.google.com/"         |
+      | "http://www.chezmoicamarche.org/" |

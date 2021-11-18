@@ -16,9 +16,8 @@ titre_attendu = {
 }
 
 
-@behave.when("On charge une page web")
-def step_impl(context):
-    url = "http://www.chezmoicamarche.org/"
+@behave.when('On charge une page web "{url}"')
+def step_impl(context, url):
     context.driver.get(url)
     context.titre_attendu = titre_attendu[url]
 
