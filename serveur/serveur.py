@@ -15,4 +15,9 @@ def hello():
     return f"Hello world {a} + {b} = {calculator.somme(a, b)}"
 
 
+@bottle.route("/<nom_fichier>")
+def servir_fichier_statique(nom_fichier):
+    return bottle.static_file(nom_fichier, root="public")
+
+
 bottle.run()  # Host localhost et port 8080 déjà mis par défaut
