@@ -6,5 +6,22 @@
 </head>
 <body>
     <h1>Calculatrice</h1>
+
+    <form action="/calculer" method="post">
+        <label for="entree-a">A :</label>
+        <input type="number" name="a" id="entree-a" />
+
+        <label for="entree-b">B :</label>
+        <input type="number" name="b" id="entree-b" />
+
+        <select name="operation" id="operation">
+            <option value="+">Addition</option>
+            <option value="-">Soustraction</option>
+            <option value="*">Multiplication</option>
+            <option value="/">Division</option>
+        </select>
+
+        <input type="submit" />
+    </form>
 </body>
 </html>
