@@ -3,3 +3,4 @@ pytest-cov
 behave
 webdrivermanager
 selenium
+bottle
